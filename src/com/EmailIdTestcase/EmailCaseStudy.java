@@ -1,5 +1,7 @@
 package com.EmailIdTestcase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -14,6 +16,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
 
 public class EmailCaseStudy extends  AutomationPracticeHomepage {
 	AutomationPracticeHomepage autohp=PageFactory.initElements(driver,AutomationPracticeHomepage.class);
@@ -59,6 +62,17 @@ public class EmailCaseStudy extends  AutomationPracticeHomepage {
 	public static void emailId(DataTable data)
 	{
 		List<List<String>> url=data.raw();
+		String str=url.get(0).get(0);
+		String [] arr=str.split("@");
+		
+		Date d=new Date();
+		SimpleDateFormat sdf=new SimpleDateFormat("hhmmss");
+		str=arr[0]+sdf.format(d)+"@"+arr[1];
+		System.out.println(str);
+		
+		
+		
+		
 	driver.findElement(By.xpath("//input[@id='email_create']")).sendKeys(url.get(0).get(0));
 
 		System.out.println("emailid is entered");
@@ -89,5 +103,9 @@ public class EmailCaseStudy extends  AutomationPracticeHomepage {
 driver.findElement(By.xpath("//input[@class='is_required validate form-control']")).sendKeys(url.get(0).get(0));
 driver.findElement(By.xpath("//input[@id='customer_lastname']")).sendKeys(url.get(1).get(0));;
 driver.findElement(By.xpath("//input[@data-validate='isPasswd']")).sendKeys(url.get(2).get(0));
+driver.findElement(By.xpath("//select[@id='days']/option[13]")).click();
+driver.findElement(By.xpath("//select[@id='months']/option[12]")).click();
+driver.findElement(By.xpath("//select[@id='years']/option[2]")).click();
+driver.findElement(By.xpath("//input[@id='address2']")).sendKeys();
 	}
 }

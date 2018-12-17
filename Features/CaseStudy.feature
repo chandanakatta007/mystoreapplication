@@ -2,6 +2,7 @@ Feature: This casestudy is by using BDD frameworks for http://automationpractice
 Background:
      Given launch the firefox browser and application link is opened and maximize it
     |http://automationpractice.com|
+    @sc1
 Scenario: User should be able to register using a valid email address
 When verify signin link is present in homepage if exists click and navigate to page
  Then verify  email address  under create an account and enter valid emailid

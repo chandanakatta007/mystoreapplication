@@ -10,7 +10,8 @@ import cucumber.api.junit.Cucumber;
  features="Features/CaseStudy.feature",
  glue={"com.EmailIdTestcase"},
  plugin={"html:TestResults","json:jsonResult/cucumber1.json"},
- monochrome=true
+ monochrome=true,
+ tags={"@sc1"}
  		)
 public class RunnerClass1 {
 	
