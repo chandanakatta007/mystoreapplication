@@ -107,5 +107,5 @@ driver.findElement(By.xpath("//select[@id='days']/option[13]")).click();
 driver.findElement(By.xpath("//select[@id='months']/option[12]")).click();
 driver.findElement(By.xpath("//select[@id='years']/option[2]")).click();
 driver.findElement(By.xpath("//input[@id='address2']")).sendKeys();
-	}
+driver.findElement(By.xpath("//input[@id='city']")).sendKeys();	}
 }
